@@ -13,10 +13,8 @@ spl_autoload_register(function ($class_name) {
     }
 });
 
-use PHP_Example\View;
-//
-$t = new View();
-$t->friends = array(
-    'Rachel', 'Monica', 'Phoebe', 'Chandler', 'Joey', 'Ross'
-);
-$t->render('index.phtml');
+require 'Routing.php';
+
+$path = parse_url($_SERVER['REQUEST_URI']);
+
+findView($path);

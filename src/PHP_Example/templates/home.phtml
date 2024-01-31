@@ -1,0 +1,10 @@
+<html>
+<body>
+Query parameters:
+<ul>
+    <?php foreach ($this->products as $item): ?>
+        <li><?=$item->getID() . ' ' . $item->getName() . ' ' . $item->getPrice()?></li>
+    <?php endforeach; ?>
+</ul>
+</body>
+</html>
