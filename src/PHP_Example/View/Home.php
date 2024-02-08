@@ -3,25 +3,28 @@ declare(strict_types=1);
 
 namespace PHP_Example\View;
 
-use PHP_Example\Repository\ProductRepository;
+use PHP_Example\Model\Bill;
+use PHP_Example\Service\ProductService;
 
 class Home extends View
 {
 
-    private ProductRepository $repository;
+    public Bill $bill;
+    private ProductService $service;
 
-    public array $products;
-    public function __construct($repository)
+    public function __construct(ProductService $service)
     {
         parent::__construct("home.phtml");
-        $this->repository = $repository;
+        $this->service = $service;
     }
 
-    public function process($input): View
+    public function process(array $input): View
     {
-//        parse_str($input['query'], $queryArray);
-//        $this->list = $queryArray;
-        $this->products = $this->repository->get_products();
+        parse_str($input['query'], $queryArray);
+        $productIds = explode(',', $queryArray['products']);
+        $couponIds = explode(',', $queryArray['coupons']);
+
+        $this->bill = $this->service->get_bill($productIds, $couponIds);
         return $this;
     }
 }

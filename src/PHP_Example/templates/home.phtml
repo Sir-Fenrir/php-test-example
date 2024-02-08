@@ -1,10 +1,20 @@
 <html>
 <body>
-Query parameters:
+Products:
 <ul>
-    <?php foreach ($this->products as $item): ?>
-        <li><?=$item->getID() . ' ' . $item->getName() . ' ' . $item->getPrice()?></li>
+    <?php foreach ($this->bill->getProducts() as $item): ?>
+        <li><?= $item->getID() . ' ' . $item->getName() . ' ' . $item->getPrice() ?></li>
     <?php endforeach; ?>
 </ul>
+
+Coupons:
+<ul>
+    <?php foreach ($this->bill->getCoupons() as $coupon): ?>
+        <li><?= $coupon ?></li>
+    <?php endforeach; ?>
+</ul>
+
+Total price: <?= $this->bill->getTotalPrice() ?>
+
 </body>
 </html>

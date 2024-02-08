@@ -4,8 +4,99 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0c9bc58e548fcb7dfe22fb7acab9bc1",
-    "packages": [],
+    "content-hash": "4f7e05bf318ffe725256703c3f106b49",
+    "packages": [
+        {
+            "name": "bentools/iterable-functions",
+            "version": "1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bpolaszek/php-iterable-functions.git",
+                "reference": "82996c6c0e794edf212cde4bb5aff0e1a2b8498d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bpolaszek/php-iterable-functions/zipball/82996c6c0e794edf212cde4bb5aff0e1a2b8498d",
+                "reference": "82996c6c0e794edf212cde4bb5aff0e1a2b8498d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0|^5.0|^6.0|^7.0",
+                "squizlabs/php_codesniffer": "^2.0|^3.4",
+                "symfony/var-dumper": "@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/iterable-functions.php"
+                ],
+                "psr-4": {
+                    "BenTools\\IterableFunctions\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Provides functions for iterable variables: is_iterable(), iterable_to_array()",
+            "support": {
+                "issues": "https://github.com/bpolaszek/php-iterable-functions/issues",
+                "source": "https://github.com/bpolaszek/php-iterable-functions/tree/1.4"
+            },
+            "time": "2020-05-01T07:48:02+00:00"
+        },
+        {
+            "name": "hguenot/phpstream",
+            "version": "V3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hguenot/phpstream.git",
+                "reference": "50828489b2823e9dba75ff4031de7664215b0bb6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hguenot/phpstream/zipball/50828489b2823e9dba75ff4031de7664215b0bb6",
+                "reference": "50828489b2823e9dba75ff4031de7664215b0bb6",
+                "shasum": ""
+            },
+            "require": {
+                "bentools/iterable-functions": "~1.3",
+                "php": ">=8.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "phpstream\\": "src/phpstream"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hervé Guenot",
+                    "email": "herve@guenot.info"
+                }
+            ],
+            "description": "PHPStream claims to be a partial PHP port of the Java Stream API.",
+            "keywords": [
+                "java stream api",
+                "stream"
+            ],
+            "support": {
+                "issues": "https://github.com/hguenot/phpstream/issues",
+                "source": "https://github.com/hguenot/phpstream/tree/V3.0.0"
+            },
+            "time": "2021-03-07T06:54:41+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "myclabs/deep-copy",
@@ -558,16 +649,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.9",
+            "version": "10.5.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "0bd663704f0165c9e76fe4f06ffa6a1ca727fdbe"
+                "reference": "50b8e314b6d0dd06521dc31d1abffa73f25f850c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/0bd663704f0165c9e76fe4f06ffa6a1ca727fdbe",
-                "reference": "0bd663704f0165c9e76fe4f06ffa6a1ca727fdbe",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/50b8e314b6d0dd06521dc31d1abffa73f25f850c",
+                "reference": "50b8e314b6d0dd06521dc31d1abffa73f25f850c",
                 "shasum": ""
             },
             "require": {
@@ -639,7 +730,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.9"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.10"
             },
             "funding": [
                 {
@@ -655,7 +746,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-01-22T14:35:40+00:00"
+            "time": "2024-02-04T09:07:51+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -1628,7 +1719,9 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-mysqli": "*"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
 }

@@ -1,19 +1,24 @@
 <?php
 
+use PHP_Example\Repository\CouponRepository;
 use PHP_Example\Repository\ProductRepository;
+use PHP_Example\Service\ProductService;
 use PHP_Example\View\Home;
+
 require 'Util/DatabaseConnector.php';
 
 
 $routes = [];
 
-function findView($path): void
+function findView(array $path): void
 {
     global $routes;
-    $routes[$path['path']]($path);
+    $conn = connect_db();
+    $routes[$path['path']]($path, $conn);
+    $conn->close();
 }
 
-$routes['/home'] = function($path) {
-    $view = new Home(new ProductRepository(connect_db()));
+$routes['/home'] = function (array $path, mysqli $conn) {
+    $view = new Home(new ProductService(new ProductRepository($conn), new CouponRepository($conn)));
     $view->process($path)->render();
 };
