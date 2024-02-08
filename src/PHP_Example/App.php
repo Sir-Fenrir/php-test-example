@@ -1,4 +1,5 @@
 <?php
+// Automatically load all libraries and classes
 require_once __DIR__ . '/../../vendor/autoload.php';
 require 'Routing.php';
 

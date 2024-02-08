@@ -7,8 +7,11 @@ use Exception;
 
 abstract class View
 {
-    protected array $vars = array();
+
+    // The map where the templates are stored
     private string $template_dir = '../src/PHP_Example/templates/';
+    
+    // The template used for the current subclass
     private string $template_file;
 
     public function __construct($template_file)
@@ -16,7 +19,12 @@ abstract class View
         $this->template_file = $template_file;
     }
 
-    abstract public function process(array $input);
+    /**
+     * This function has to be implemented to process the current HTTP request.
+     * @param array $input This is the HTTP request information
+     * @return View The current view, to be able to chain from this to render.
+     */
+    abstract public function process(array $input): View;
 
     /**
      * @throws Exception when there is no template
@@ -28,15 +36,5 @@ abstract class View
         } else {
             throw new Exception('no template file ' . $this->template_file . ' present in directory ' . $this->template_dir);
         }
-    }
-
-    public function __get($name)
-    {
-        return $this->vars[$name];
-    }
-
-    public function __set($name, $value)
-    {
-        $this->vars[$name] = $value;
     }
 }
