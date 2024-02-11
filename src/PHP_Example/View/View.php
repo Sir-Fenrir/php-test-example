@@ -10,7 +10,7 @@ abstract class View
 
     // The map where the templates are stored
     private string $template_dir = '../src/PHP_Example/templates/';
-    
+
     // The template used for the current subclass
     private string $template_file;
 
