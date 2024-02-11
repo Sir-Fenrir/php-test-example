@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PHP_Example\View;
 
-require_once(__DIR__ . '/../Util/UserInputUtils.php');
+require_once __DIR__ . '/../Util/UserInputUtils.php';
 
 use PHP_Example\Model\Bill;
 use PHP_Example\Service\ProductService;

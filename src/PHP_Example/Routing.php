@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 use PHP_Example\Repository\CouponRepository;
 use PHP_Example\Repository\ProductRepository;
